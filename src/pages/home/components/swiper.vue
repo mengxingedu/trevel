@@ -15,24 +15,26 @@ export default {
   data() {
     return {
       swiperOptions: {
+        autoplay : true, //自动轮播
+        // slidesPerView : 2,  
+        loop : true,
+        autoplay : {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
         pagination: {
-          el: ".swiper-pagination"
+          el : '.swiper-pagination'
         }
-        // Some Swiper option/callback...
       }
     };
-  },
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.$swiper;
-    }
-  },
-  mounted() {
-    console.log("Current Swiper instance object", this.swiper);
-    this.swiper.slideTo(3, 1000, false);
   }
 };
 </script>
 
 
-<style lang='stylus' scoped></style>
+<style lang='stylus' scoped>
+.swiper-slide {
+  height : 1.2rem;
+  background: green;
+}
+</style>
