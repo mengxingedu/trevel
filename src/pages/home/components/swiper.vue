@@ -1,10 +1,7 @@
 <template>
   <swiper ref="mySwiper" :options="swiperOptions">
-    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide><img :src='imgUrl' /></swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide>
-    <swiper-slide>Slide 5</swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
 </template>
@@ -14,6 +11,7 @@ export default {
   name: "HomeSwiper", //组件的名字
   data() {
     return {
+      imgUrl : '../assets/image/home_ban1.jpg',
       swiperOptions: {
         autoplay : true, //自动轮播
         // slidesPerView : 2,  
