@@ -22,13 +22,13 @@ export default {
   name: "HomeSwiper", //组件的名字
   data() {
     return {
-      imgUrl: require("../../../assets/image/home_ban2.jpg"), //第一种写法
+      // imgUrl: require("../../../assets/image/home_ban2.jpg"), //第一种写法
 
       swiperOptions: {
-        autoplay : true, //自动轮播
+        // autoplay : true, //自动轮播
         // slidesPerView : 2,
         loop: true,
-        autoplay : { //解决自动轮播点击后不会自动轮播
+        autoplay : { //解决autoplay自动轮播点击后不会自动轮播
           delay: 2500,
           disableOnInteraction: false,
         },
