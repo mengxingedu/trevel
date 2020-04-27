@@ -5,5 +5,5 @@
 </template>
 
 <style>
-
+ *{touch-action: manipulation;}
 </style>
