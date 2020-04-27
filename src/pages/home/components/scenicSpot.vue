@@ -4,7 +4,7 @@
         <ul class="clearfix">
             <li :class="['item', {focus : index == onIndex}]" @click='classOn(index)' v-for='(item, index) of classList' :key='index'>当季热门度假</li>
         </ul>
-        <component :is='vacationList' :dataCon='editData'></component>
+        <component :is='vacationList' :dataCon='thisData'></component>
     </div>
 </template>
 
@@ -27,7 +27,7 @@ export default{
            ],
            onIndex : 0,
            vacationList,
-           thisData : null,
+           thisData : {},
            thisDataList : [
                 [
                     {
@@ -83,7 +83,10 @@ export default{
         }
     },
     computed : {
-       editData (){
+       
+    },
+    watch : {
+        thisData (){
            return this.thisData = this.thisDataList[this.onIndex]
        }
     }
