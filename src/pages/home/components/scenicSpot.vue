@@ -35,7 +35,10 @@ export default {
     listData() {
         if(this.list[this.onIndex]){
             return this.list[this.onIndex].Datalist
+        }else {
+          return []
         }
+        
     }
   }
 };
@@ -69,7 +72,8 @@ export default {
 }
 
 .item.focus {
-  color: #00ccdc;
+  color: #fff;
+  background: #00ccdc;
   border: 0.02rem solid #00ccdc;
 }
 </style>
