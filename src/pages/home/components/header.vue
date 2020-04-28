@@ -2,7 +2,9 @@
     <div class="header">
         <div class="header-left"><div style="text-align:center" class="iconfont ">&#xe624;</div></div>
         <div class="header-input"><span class="iconfont">&#xe632;</span>输入城市/景点/游玩组题</div>
-        <div class="header-right">{{city}}<span style="margin-left:.1rem" class="iconfont arrow-icon">&#xe62b;</span></div>
+        <router-link to='/city'>
+            <div class="header-right">{{city}}<span style="margin-left:.1rem" class="iconfont arrow-icon">&#xe62b;</span></div>
+        </router-link>
     </div>
 </template>
 
@@ -26,9 +28,9 @@ scoped 只真对当前组件使用样式，不对其他组件影响，局部化�
     @import '~@/assets/styles/varibles.styl'
     .header
         display :flex
-        line-height : .86rem
+        line-height : $HeaderHight
         background:$bgColor
-        color:#fff
+        color:#fff 
         .header-left
             width : .64rem
             float left
@@ -44,6 +46,7 @@ scoped 只真对当前组件使用样式，不对其他组件影响，局部化�
         .header-right 
             width : 1.24rem
             float :right
+            color:#fff 
             .arrow-icon
                 font-size :.2rem
                 margin-left : -0.04rem

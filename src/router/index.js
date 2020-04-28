@@ -9,13 +9,12 @@ Vue.use(VueRouter)
     path: '/',
     // name: 'Home',
     component: Home
+  },
+  {
+    path: '/city',
+    name: 'City',
+    component: () => import(/* webpackChunkName: "about" */ '../pages/city/City')
   }
-  // ,
-  // {
-  //   path: '/list',
-  //   // name: 'list',
-  //   component: () => import(/* webpackChunkName: "about" */ '../pages/list/list')
-  // }
 ]
 
 const router = new VueRouter({
