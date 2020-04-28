@@ -5,7 +5,7 @@
         <home-icons :list='iconList'></home-icons>
         <home-recommend :list='recommendList'></home-recommend>
         <home-weekend :list='weekendList'></home-weekend>
-        <scenic-spot></scenic-spot>
+        <scenic-spot :list='vacationList'></scenic-spot>
     </div>
 </template>
 <script>
@@ -32,7 +32,8 @@ export default{
             swiperList : [],
             iconList : [],
             recommendList : [],
-            weekendList : []
+            weekendList : [],
+            vacationList : []
         }
     },
     mounted (){
@@ -49,10 +50,11 @@ export default{
                 this.city = res.city;
                 console.log(res)
                 this.swiperList = res.swiperList;
-                console.log(res.iconsList)
                 this.iconList = res.iconList;
                 this.recommendList = res.recommendList;
                 this.weekendList = res.weekendList;
+                console.log(res.vacationList)
+                this.vacationList = res.vacationList;
             }
         }
     }

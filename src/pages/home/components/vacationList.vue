@@ -11,7 +11,9 @@
 <script>
 export default{
     name : 'vacationList',
-    props:['dataCon'],
+    props: {
+        dataCon : Array
+    },
     data (){
         return {
 

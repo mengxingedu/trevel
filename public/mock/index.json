@@ -137,50 +137,56 @@
       }
     ],
     "vacationList": [
-      [
-        {
-          "imgUrl": "http://imgs.qunarzz.com/p/p48/201302/28/bc44faa497db0dcf93835fbb.jpg_256x160_0ba13461.jpg",
-          "title": "含往返飞机票(含税)+5晚住宿",
-          "Price": "3464"
-        },
-        {
-          "imgUrl": "http://imgs.qunarzz.com/sight/p0/1504/37/37bc07abdd1fdbee.water.jpg_256x160_061797a3.jpg",
-          "title": "含往返飞机票(含税)+4晚住宿",
-          "Price": "8580"
-        },
-        {
-          "imgUrl": "http://imgs.qunarzz.com/p/p66/201304/17/384810d022dd28f793835fbb.jpg_256x160_6a7ec251.jpg",
-          "title": "含往返飞机票(含税)+4晚住宿",
-          "Price": "3380"
-        },
-        {
-          "imgUrl": "http://imgs.qunarzz.com/p/p29/201302/28/3d20251a1b60350a93835fbb.jpg_256x160_e8f468b0.jpg",
-          "title": "含往返飞机票(含税)+6晚住宿",
-          "Price": "4999"
-        }
-      ],
-      [
-        {
-          "imgUrl": "//imgs.qunarzz.com/p/tts8/1809/ef/e725b9cd5f02ef02.jpg_r_480x320x95_678ac1d1.jpg",
-          "title": "佛山-惠州 2天跟团游",
-          "Price": "399"
-        },
-        {
-          "imgUrl": "//imgs.qunarzz.com/vs_ceph_vs_tts/4f2fab6c-5bd6-49f3-b144-e2f5b0470aeb.jpg_180x120_7fda00b7.jpg",
-          "title": "广州-桂林 5天跟团游",
-          "Price": "2499"
-        },
-        {
-          "imgUrl": "//imgs.qunarzz.com/vs_ceph_vs_tts/adf28d56-584b-41e2-89e1-d27e83fd0c65.jpg_180x120_830ccd50.jpg",
-          "title": "广州-桂林 4天跟团游",
-          "Price": "2059"
-        },
-        {
-          "imgUrl": "//imgs.qunarzz.com/vs_ceph_vs_tts/41b9e526-bd64-4104-8fc0-1dead5273864.jpg_180x120_253a721b.jpg",
-          "title": "广州-酒泉 5天跟团游",
-          "Price": "3100"
-        }
-      ]
+      {
+        "type": "当季热门度假",
+        "Datalist": [
+          {
+            "imgUrl": "http://imgs.qunarzz.com/p/p48/201302/28/bc44faa497db0dcf93835fbb.jpg_256x160_0ba13461.jpg",
+            "title": "含往返飞机票(含税)+5晚住宿",
+            "Price": "3464"
+          },
+          {
+            "imgUrl": "http://imgs.qunarzz.com/sight/p0/1504/37/37bc07abdd1fdbee.water.jpg_256x160_061797a3.jpg",
+            "title": "含往返飞机票(含税)+4晚住宿",
+            "Price": "8580"
+          },
+          {
+            "imgUrl": "http://imgs.qunarzz.com/p/p66/201304/17/384810d022dd28f793835fbb.jpg_256x160_6a7ec251.jpg",
+            "title": "含往返飞机票(含税)+4晚住宿",
+            "Price": "3380"
+          },
+          {
+            "imgUrl": "http://imgs.qunarzz.com/p/p29/201302/28/3d20251a1b60350a93835fbb.jpg_256x160_e8f468b0.jpg",
+            "title": "含往返飞机票(含税)+6晚住宿",
+            "Price": "4999"
+          }
+        ]
+      },
+      {
+        "type": "今日特惠度假",
+        "Datalist": [
+            {
+              "imgUrl": "//imgs.qunarzz.com/p/tts8/1809/ef/e725b9cd5f02ef02.jpg_r_480x320x95_678ac1d1.jpg",
+              "title": "佛山-惠州 2天跟团游",
+              "Price": "399"
+            },
+            {
+              "imgUrl": "//imgs.qunarzz.com/vs_ceph_vs_tts/4f2fab6c-5bd6-49f3-b144-e2f5b0470aeb.jpg_180x120_7fda00b7.jpg",
+              "title": "广州-桂林 5天跟团游",
+              "Price": "2499"
+            },
+            {
+              "imgUrl": "//imgs.qunarzz.com/vs_ceph_vs_tts/adf28d56-584b-41e2-89e1-d27e83fd0c65.jpg_180x120_830ccd50.jpg",
+              "title": "广州-桂林 4天跟团游",
+              "Price": "2059"
+            },
+            {
+              "imgUrl": "//imgs.qunarzz.com/vs_ceph_vs_tts/41b9e526-bd64-4104-8fc0-1dead5273864.jpg_180x120_253a721b.jpg",
+              "title": "广州-酒泉 5天跟团游",
+              "Price": "3100"
+            }
+        ]
+      }
     ]
   }
 }

@@ -3,7 +3,7 @@
         <div class="title">周末去哪儿</div>
         <ul>
             <li class="item" v-for="item of list" :key='item.id'>
-                <img class="item-img" :src="item.imgUrl" alt="">
+                <p class="item-pimg"><img class="item-img" :src="item.imgUrl" alt=""></p>
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
                     <p class="item-desc">{{item.desc}}</p>
@@ -31,9 +31,13 @@ export default{
     .item
         padding-bottom .1rem
         margin-bottom .2rem
-        .item-img
+        .item-pimg
             width 100%
-            height 1.8rem
+            height 0
+            padding-bottom 38.01%
+            overflow hidden
+            .item-img
+                width 100%
         .item-info
             text-indent .2rem
             min-width 0
