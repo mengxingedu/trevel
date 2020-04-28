@@ -1,10 +1,10 @@
 <template>
     <div>
-        <home-header></home-header>
-        <home-swiper></home-swiper>
-        <home-icons></home-icons>
-        <home-recommend></home-recommend>
-        <home-weekend></home-weekend>
+        <home-header :city='city'></home-header>
+        <home-swiper :list='swiperList'></home-swiper>
+        <home-icons :list='iconList'></home-icons>
+        <home-recommend :list='recommendList'></home-recommend>
+        <home-weekend :list='weekendList'></home-weekend>
         <scenic-spot></scenic-spot>
     </div>
 </template>
@@ -26,6 +26,15 @@ export default{
         HomeWeekend,
         scenicSpot
     },
+    data (){
+        return {
+            city : '',
+            swiperList : [],
+            iconList : [],
+            recommendList : [],
+            weekendList : []
+        }
+    },
     mounted (){
         this.getHomeInfo()
     },
@@ -35,7 +44,16 @@ export default{
                 .then(this.getHomeInfoSucc)
         },
         getHomeInfoSucc(res){
-            console.log(res)
+            if(res && res.data && res.data.ret){
+                res = res.data.data;
+                this.city = res.city;
+                console.log(res)
+                this.swiperList = res.swiperList;
+                console.log(res.iconsList)
+                this.iconList = res.iconList;
+                this.recommendList = res.recommendList;
+                this.weekendList = res.weekendList;
+            }
         }
     }
 }

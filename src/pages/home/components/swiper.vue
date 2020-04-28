@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <swiper ref="mySwiper" :options="swiperOptions">
+    <swiper ref="mySwiper" :options="swiperOptions" v-if='listList'>
       <!--第一种写法-->
-      <swiper-slide v-for="arr in swiperList" :key="arr.id">
-        <img class="swiper-img" :src="arr.imgList" />
+      <swiper-slide v-for="arr in list" :key="arr.id">
+        <img class="swiper-img" :src="arr.imgUrl" />
       </swiper-slide>
       <!--第二种写法-->
       <!-- <swiper-slide>
@@ -14,19 +14,20 @@
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
+  
 </template>
 
 <script>
 // import smallImg from '../../../assets/image/home_ban3.jpg'
 export default {
   name: "HomeSwiper", //组件的名字
-  data() {
+  props : {
+    list : Array
+  },
+  data () {
     return {
       // imgUrl: require("../../../assets/image/home_ban2.jpg"), //第一种写法
-
       swiperOptions: {
-        // autoplay : true, //自动轮播
-        // slidesPerView : 2,
         loop: true,
         autoplay : { //解决autoplay自动轮播点击后不会自动轮播
           delay: 2500,
@@ -35,22 +36,13 @@ export default {
         pagination: {
           el: ".swiper-pagination"
         }
-      },
-      swiperList : [
-        {
-          id : '001',
-          imgList : require('../../../assets/image/home_ban1.jpg'),
-        },
-        {
-          id : '002',
-          imgList : require("../../../assets/image/home_ban2.jpg"),
-        },
-        {
-          id : '003',
-          imgList : require("../../../assets/image/home_ban3.jpg"),
-        }
-      ]
+      }
     };
+  },
+  computed : {
+    listList() {
+      return this.list.length;
+    }
   }
 };
 </script>
@@ -67,7 +59,7 @@ export default {
   width : 100%
   background : #eee
   //第二种
-  height : 50.7vw
+  height : 31.25vw
 
   // 第一种图片自适应
   // height : 0;
