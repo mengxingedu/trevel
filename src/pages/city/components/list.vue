@@ -10,60 +10,13 @@
             <div class="area">
                 <div class="title border ">热门城市</div>
                 <div class='areaList clearfix'>
-                    <p class="dizi">北京</p>     
-                    <p class="dizi">北京</p>     
-                    <p class="dizi">北京</p>     
-                    <p class="dizi">北京</p>     
-                    <p class="dizi">北京</p>     
-                    <p class="dizi">北京</p>
+                    <p class="dizi" v-for="item of hotCities" :key='item.id'>{{item.name}}</p>  
                 </div>
             </div>
-            <div class="area">
-                <div class="title border">A</div>
+            <div class="area" v-for='(item, key) of cities' :key='key' :ref='key'>
+                <div class="title border" >{{key}}</div>
                 <ul>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                </ul>
-            </div>
-            <div class="area">
-                <div class="title border">A</div>
-                <ul>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                </ul>
-            </div>
-            <div class="area">
-                <div class="title border">A</div>
-                <ul>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                </ul>
-            </div>
-            <div class="area">
-                <div class="title border">A</div>
-                <ul>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
-                    <li class='zmlist'>阿拉伯</li>
+                    <li class='zmlist' v-for='arr of item' :key='arr.id'>{{arr.name}}</li>
                 </ul>
             </div>
         </div>
@@ -74,9 +27,23 @@
 import BScroll from 'better-scroll'
 export default{
     name : 'CityList',
+    props : {
+        hotCities : Array,
+        cities : Object,
+        letter : String
+    },
     mounted (){
         this.scroll = new BScroll(this.$refs.wrapper)
-    }
+    },
+    watch :{
+        letter (){
+            if(this.letter){
+                const ement = this.$refs[this.letter][0]
+                this.scroll.scrollToElement(ement)
+                // this.scroll.scrollToElement(ement,  2500)
+            }
+        }
+    }   
 }
 </script>
 
