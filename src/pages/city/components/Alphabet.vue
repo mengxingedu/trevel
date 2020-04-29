@@ -19,7 +19,8 @@ export default{
     data (){
         return {
             touchStartus : false,
-
+            startY : 0,
+            timer : null , //滑动频率太大了，需要限制频率
         }
     },
     computed : {
@@ -31,6 +32,10 @@ export default{
             return letters;
         }
     },
+    updated(){
+        //当页面数据被跟新的时候，页面完成了自己的渲染
+        this.startY = this.$refs['A'][0].offsetTop;
+    },
     methods : {
         handleLetter (e){
             this.$emit('change' ,e.target.innerText)
@@ -40,12 +45,23 @@ export default{
         },
         handleTouchMove(e){//接触点滑动时
             if(this.touchStartus){
-                const startY = this.$refs['A'][0].offsetTop;
-                const touchY = e.touches[0].clientY - 79;  //79是审查头部的高度
-                const index = Math.floor((touchY - startY) / 18.4);  //18.4是审查元素的高度
-                if(index >= 0 && index < this.letters.length){
-                    this.$emit('change', this.letters[index])
+                // const startY = this.startY; //【因为定位了】拿到的就是这个元素距离祖宗元素顶部的距离，没有定位拿到的就是顶部距离body的距离
+                
+                //通过延迟定时器减少这个函数执行频率
+                if(this.timer){
+                    clearTimeout(this.timer)
                 }
+                this.timer = setTimeout(() =>{
+                    const touchY = e.touches[0].clientY - 79;  //拿到的是浏览器顶部的距离 79是审查头部模块组件的高度，减去79就跟startY的的距离是一样的
+                    //当前滑动的位置减去a距离顶部的距离算出差值，再除每个字母的高度就是所在的字母位置，
+                    //18.4是每个元素的高度【这个差值除去每个字母的高度就可以算出每个字母的范围】
+                    const index = Math.floor((touchY - this.startY) / 18.4);  
+                    if(index >= 0 && index < this.letters.length){
+                        this.$emit('change', this.letters[index])
+                    }
+                }, 16)
+                
+                
                 
             }
         },
