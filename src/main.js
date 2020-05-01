@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 // import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './store' // 不用写index会自动找
 import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
@@ -14,7 +15,12 @@ Vue.config.productionTip = true;    //对于开发版本，会默认向控制台
 
 Vue.use(VueAwesomeSwiper)
 
+
+
+
+
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

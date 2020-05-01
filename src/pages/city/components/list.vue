@@ -4,13 +4,13 @@
             <div class="area">
                 <div class="title border ">你的位置</div>
                 <div class='areaList clearfix'>
-                    <p class="dizi">北京</p> 
+                    <p class="dizi">{{this.$store.state.cities}}</p> 
                 </div>
             </div>
             <div class="area">
                 <div class="title border ">热门城市</div>
                 <div class='areaList clearfix'>
-                    <p class="dizi" v-for="item of hotCities" :key='item.id'>{{item.name}}</p>  
+                    <p class="dizi" v-for="item of hotCities" :key='item.id' @click='setCities(item.name)'>{{item.name}}</p>  
                 </div>
             </div>
             <div class="area" v-for='(item, key) of cities' :key='key' :ref='key'>
@@ -34,6 +34,12 @@ export default{
     },
     mounted (){
         this.scroll = new BScroll(this.$refs.wrapper)
+    },
+    methods : {
+        setCities (val){
+            console.log(val)
+            // this.$store.commit('increment', val)
+        }
     },
     watch :{
         letter (){

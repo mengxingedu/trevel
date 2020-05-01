@@ -13,6 +13,7 @@ import CitySearch from "./components/Search";
 import CityList from "./components/list";
 import CityAlphabet from "./components/Alphabet";
 import axios from "axios";
+
 export default {
   name: "City",
   components: {
@@ -25,7 +26,7 @@ export default {
     return {
       hotCities: null,
       cities: null,
-      letter: ""
+      letter: "",
     };
   },
   mounted() {

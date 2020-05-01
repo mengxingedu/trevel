@@ -3,7 +3,7 @@
         <div class="header-left"><div style="text-align:center" class="iconfont ">&#xe624;</div></div>
         <div class="header-input"><span class="iconfont">&#xe632;</span>输入城市/景点/游玩组题</div>
         <router-link to='/city'>
-            <div class="header-right">{{city}}<span style="margin-left:.1rem" class="iconfont arrow-icon">&#xe62b;</span></div>
+            <div class="header-right">{{this.$store.state.cities}}<span style="margin-left:.1rem" class="iconfont arrow-icon">&#xe62b;</span></div>
         </router-link>
     </div>
 </template>
@@ -11,10 +11,7 @@
 <script>
 // import configs from '../../../assets/js/vue.config'
 export default{
-    name : 'Home',
-    props : {
-        city : String
-    }
+    name : 'Home'
 }
 </script>
 
