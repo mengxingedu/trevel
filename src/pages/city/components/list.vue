@@ -8,15 +8,15 @@
                 </div>
             </div>
             <div class="area">
-                <div class="title border ">热门城市</div>
+                <div class="title border" >热门城市</div>
                 <div class='areaList clearfix'>
-                    <p class="dizi" v-for="item of hotCities" :key='item.id' @click='setCities(item.name)'>{{item.name}}</p>  
+                    <p class="dizi" v-for="item of hotCities" :key='item.id' @click="setCities(item.name)">{{item.name}}</p>  
                 </div>
             </div>
             <div class="area" v-for='(item, key) of cities' :key='key' :ref='key'>
                 <div class="title border" >{{key}}</div>
                 <ul>
-                    <li class='zmlist' v-for='arr of item' :key='arr.id'>{{arr.name}}</li>
+                    <li class='zmlist' v-for='arr of item' :key='arr.id' @click="setCities(arr.name)">{{arr.name}}</li>
                 </ul>
             </div>
         </div>
@@ -33,12 +33,15 @@ export default{
         letter : String
     },
     mounted (){
-        this.scroll = new BScroll(this.$refs.wrapper)
+        this.scroll = new BScroll(this.$refs.wrapper,{
+            click : true
+        })
     },
     methods : {
         setCities (val){
-            console.log(val)
-            // this.$store.commit('increment', val)
+            this.$store.commit('increment', val);
+            this.$router.push('/')
+
         }
     },
     watch :{
