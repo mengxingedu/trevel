@@ -2,14 +2,14 @@
     <div>
         <div class="title">热销推荐</div>
         <ul>
-            <li class="item border-bottom" v-for="item of list" :key='item.id'>
+            <router-link class="item border-bottom" v-for="item of list" :key='item.id' tag='li' :to="'/detail/' + item.id">
                 <img class="item-img" :src="item.imgUrl" alt="">
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
                     <p class="item-desc">{{item.desc}}</p>
                     <p class="item-Price">￥{{item.Price}}起</p>
                 </div>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
@@ -25,6 +25,7 @@ export default{
 
 <style lang='stylus' scoped>
     @import '~@/assets/styles/mxmins.styl'
+
     .title
         line-height .8rem
         background #eee
@@ -49,7 +50,7 @@ export default{
             .item-desc
                 line-height .4rem
                 font-size .28rem
-                color #ccc
+                
                 margin-bottom .1rem
                 ellipsis()
             .item-Price
