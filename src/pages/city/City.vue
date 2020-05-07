@@ -1,8 +1,8 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search :cities="cities"></city-search>
-    <city-list :hotCities="hotCities" :cities="cities" :letter="letter"></city-list>
+    <city-search :searchCities="cities"></city-search>
+    <city-list :hotCities="hotCities" :citiesChange="cities" :letter="letter"></city-list>
     <city-alphabet :cities="cities" @change="handleLetterChange"></city-alphabet>
   </div>
 </template>

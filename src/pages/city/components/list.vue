@@ -4,19 +4,19 @@
             <div class="area">
                 <div class="title border ">你的位置</div>
                 <div class='areaList clearfix'>
-                    <p class="dizi">{{this.$store.state.cities}}</p> 
+                    <p class="dizi">{{this.cities}}</p> 
                 </div>
             </div>
             <div class="area">
                 <div class="title border" >热门城市</div>
                 <div class='areaList clearfix'>
-                    <p class="dizi" v-for="item of hotCities" :key='item.id' @click="setCities(item.name)">{{item.name}}</p>  
+                    <p class="dizi" v-for="item of hotCities" :key='item.id' @click="handleCityClick(item.name)">{{item.name}}</p>  
                 </div>
             </div>
-            <div class="area" v-for='(item, key) of cities' :key='key' :ref='key'>
+            <div class="area" v-for='(item, key) of citiesChange' :key='key' :ref='key'>
                 <div class="title border" >{{key}}</div>
                 <ul>
-                    <li class='zmlist' v-for='arr of item' :key='arr.id' @click="setCities(arr.name)">{{arr.name}}</li>
+                    <li class='zmlist' v-for='arr of item' :key='arr.id' @click="handleCityClickActions(arr.name)">{{arr.name}}</li>
                 </ul>
             </div>
         </div>
@@ -25,11 +25,12 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapState, mapMutations } from 'vuex'
 export default{
     name : 'CityList',
     props : {
         hotCities : Array,
-        cities : Object,
+        citiesChange : Object,
         letter : String
     },
     mounted (){
@@ -38,11 +39,37 @@ export default{
         })
     },
     methods : {
-        setCities (val){
-            this.$store.commit('increment', val);
+        handleCityClick (val){ //直接跳过Actions操作store里的数据
+            //未使用映射的方式
+            // this.$store.commit('increment', val);
+            // this.$router.push('/')
+            
+            //使用MapMutations映射的方式
+            // this.increment(val)
+            // this.$router.push('/')
+
+            //使用MapMutations映射的方式
+            this.add(val)
             this.$router.push('/')
 
-        }
+        },
+        handleCityClickActions(val){ //使用Actions 操作commit进行修改store里的数据
+            //未使用mapMutations映射的方式
+            this.$store.dispatch('IisActions', val)
+            this.$router.push('/')
+
+        },
+        ...mapMutations([
+            'increment'  //将this.increment() 映射为 this.$store.commit('increment')
+        ]),
+        ...mapMutations({
+            add : 'increment'
+        })
+    },
+    computed : {
+         ...mapState({
+            cities : 'cities'
+        })
     },
     watch :{
         letter (){

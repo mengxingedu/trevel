@@ -21,6 +21,6 @@ Vue.use(VueAwesomeSwiper)
 
 new Vue({
   router,
-  store,
+  store,  //会将实例派发到根组件下的所有子组件中，且子组件能通过 this.$store访问到，
   render: h => h(App)
 }).$mount('#app')
