@@ -4,13 +4,8 @@ const moduleA = {
         const : "我模块A的值:"
     }),
     mutations : {
-        increment(hehe1){
-            hehe1.const += 'hello world'
-        }
-    },
-    actions : {
-        incrementIfOddOnRootSum (haha1){
-            haha1.commit('increment')
+        incrementIfOddOnRootSum(states){
+            states.const += 'hello world'
         }
     }
 }

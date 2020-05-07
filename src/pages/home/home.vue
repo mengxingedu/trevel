@@ -6,6 +6,7 @@
         <home-recommend :list='recommendList'></home-recommend>
         <home-weekend :list='weekendList'></home-weekend>
         <scenic-spot :list='vacationList'></scenic-spot>
+
     </div>
 </template>
 <script>
@@ -44,8 +45,6 @@ export default{
         this.getHomeInfo()
     },
     activated (){
-        console.log(this.lastCity) 
-        console.log(this.cities) 
         if(this.lastCity !== this.cities){
             this.lastCity = this.cities;
             this.getHomeInfo()
@@ -65,6 +64,8 @@ export default{
                 this.weekendList = res.weekendList;
                 this.vacationList = res.vacationList;
             }
+
+            
         }
     },
     computed : {
