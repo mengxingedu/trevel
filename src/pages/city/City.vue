@@ -14,6 +14,7 @@ import CityList from "./components/list";
 import CityAlphabet from "./components/Alphabet";
 import axios from "axios";
 
+
 export default {
   name: "City",
   components: {
@@ -46,7 +47,8 @@ export default {
     handleLetterChange(letter) {
       this.letter = letter;
     }
-  }
+  },
+  
 };
 </script>
 
