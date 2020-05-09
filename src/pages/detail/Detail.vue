@@ -5,6 +5,7 @@
         <DetailAnnounce />
         <DetailTicketgroup />
         <DetailCommentList />
+        <DetailRecommend />
     </div>
 </template>
 
@@ -14,6 +15,7 @@ import DetailIntroduce from './components/introduce'
 import DetailAnnounce from './components/announce'
 import DetailTicketgroup from './components/ticketgroup'
 import DetailCommentList from './components/commentList'
+import DetailRecommend from './components/recommend'
 
 export default {
     name : 'Detail',
@@ -22,7 +24,8 @@ export default {
         DetailIntroduce,
         DetailAnnounce,
         DetailTicketgroup,
-        DetailCommentList
+        DetailCommentList,
+        DetailRecommend
     }
 }
 </script>

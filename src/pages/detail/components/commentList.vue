@@ -2,107 +2,25 @@
     <div class="comment-con">
         <h3 class="comment-title">用户评论</h3>
         <ul>
-            <li class="comment-item border-top">
+            <li class="comment-item border-top" v-for="item of commentList" :key='item.id'>
                 <div class="comment-item-title">
                     <span>
-                        <span class="iconfont Star">&#xe647;</span>
-                        <span class="iconfont Star">&#xe647;</span>
-                        <span class="iconfont Star">&#xe647;</span>
-                        <span class="iconfont Star">&#xe647;</span>
-                        <span class="iconfont Star">&#xe647;</span>
+                        
+                        <span :class="['iconfont','Star',{'starlevel-gain' : arr <= item.Star}]" v-for='arr of 5' :key="'star' + arr">&#xe647;</span>
                     </span>
                     <p class="comment-item-title-right">
-                        <span class="">t**3&nbsp;&nbsp;&nbsp;2020-05-09</span>
+                        <span class="">{{item.name}}&nbsp;&nbsp;&nbsp;{{item.time}}</span>
                     </p>
-                    <img class="quality" :src="require('../../../assets/image/quality.png')" alt="">
+                    <img class="quality" v-if='item.isQuality' :src="require('../../../assets/image/quality.png')" alt="">
                 </div>
                 <div>
-                    <p class="comment-conent">
-                        2018.1.9日去的。当天下雨，园区内游客了了，许多节目因天气原因暂停取消，可以理解。但是雨中逛圆也是一种心情，空气极好。
-                        孩子最喜欢火烈鸟，大人比较喜欢熊猫。但是熊猫基本不动，醒来也是吃竹子。看了马戏团表演和百兽游园，都很不错，
-                        尤其是马戏团表演， 看着很感动，不过观众太少很影响氛围。海豚表演没有看，但是为了补偿每个孩子可以免费和海豚合影，
-                        也不错，合影前需洗手。深圳动物园每种动物都很多，老虎也有白色的。
-                        园区内吃喝都是收费的，个人觉得价格可以接受吧。游览车20一人，需保留票根。
-                        最大的体验，带孩子游园很累，最好穿运动鞋
-                    </p>
+                    <p class="comment-conent">{{item.desc}}</p>
                     <p class="iconfont ticket-extend">&#xe62f;</p>
                 </div>
                 <div class="comment-imgs clearfix">
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
-                    </div>   
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
-                    </div>  
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
-                    </div>  
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
-                    </div>  
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
-                    </div>  
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
-                    </div>
-                </div>
-            </li>
-            <li class="comment-item border-top">
-                <div class="comment-item-title">
-                    <span>
-                        <span class="iconfont Star">&#xe647;</span>
-                        <span class="iconfont Star">&#xe647;</span>
-                        <span class="iconfont Star">&#xe647;</span>
-                        <span class="iconfont Star">&#xe647;</span>
-                        <span class="iconfont Star">&#xe647;</span>
-                    </span>
-                    <p class="comment-item-title-right">
-                        <span class="">t**3&nbsp;&nbsp;&nbsp;2020-05-09</span>
-                    </p>
-                    <img class="quality" :src="require('../../../assets/image/quality.png')" alt="">
-                </div>
-                <div>
-                    <p class="comment-conent">
-                        2018.1.9日去的。当天下雨，园区内游客了了，许多节目因天气原因暂停取消，可以理解。但是雨中逛圆也是一种心情，空气极好。
-                        孩子最喜欢火烈鸟，大人比较喜欢熊猫。但是熊猫基本不动，醒来也是吃竹子。看了马戏团表演和百兽游园，都很不错，
-                        尤其是马戏团表演， 看着很感动，不过观众太少很影响氛围。海豚表演没有看，但是为了补偿每个孩子可以免费和海豚合影，
-                        也不错，合影前需洗手。深圳动物园每种动物都很多，老虎也有白色的。
-                        园区内吃喝都是收费的，个人觉得价格可以接受吧。游览车20一人，需保留票根。
-                        最大的体验，带孩子游园很累，最好穿运动鞋
-                    </p>
-                    <p class="iconfont ticket-extend">&#xe62f;</p>
-                </div>
-                <div class="comment-imgs clearfix">
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
-                    </div>   
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
-                    </div>  
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
-                    </div>  
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
-                    </div>  
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
-                    </div>  
-                    <div class="comment-imgouter ">
-                        <img class="comment-img" src="http://img1.qunarzz.com/piao/fusion/1801/e9/8d6954beb8555902.jpg_228x168_ec0120bb.jpg" alt="">
-                        <p class="comment-tagnum" >共9张</p>
+                    <div class="comment-imgouter" v-for='(imgArr, index) of item.imgs' :key="'imgs' + index" v-show='index < 6'>
+                        <img class="comment-img" :src="imgArr" alt="">
+                        <p class="comment-tagnum" v-if='index === 5'>共{{item.imgs.length}}张</p>
                     </div>
                 </div>
             </li>
@@ -115,7 +33,32 @@
 
 <script>
 export default {
-    name : 'DetailCommentList'
+    name : 'DetailCommentList',
+    data (){
+        return {
+            commentList : [
+                {
+                    id : '001',
+                    Star : 2,
+                    name : 't**1',
+                    time : '2020-05-09',
+                    isQuality : true,
+                    desc : ' 2018.1.9日去的。当天下雨，园区内游客了了，许多节目因天气原因暂停取消，可以理解。但是雨中逛圆也是一种心情，空气极好。 孩子最喜欢火烈鸟，大人比较喜欢熊猫。但是熊猫基本不动，醒来也是吃竹子。看了马戏团表演和百兽游园，都很不错， 尤其是马戏团表演， 看着很感动，不过观众太少很影响氛围。海豚表演没有看，但是为了补偿每个孩子可以免费和海豚合影， 也不错，合影前需洗手。深圳动物园每种动物都很多，老虎也有白色的。 园区内吃喝都是收费的，个人觉得价格可以接受吧。游览车20一人，需保留票根。 最大的体验，带孩子游园很累，最好穿运动鞋 ',
+                    imgs : [
+                        'http://img1.qunarzz.com/p/tts5/1812/92/df9aa8800a2b6002.jpg_228x168_7641125e.jpg',
+                        'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/fusion/20197/86f5279bc244d35b7b99fe6eabbe74cf.jpg_228x168_3b83c5f3.jpg',
+                        'http://img1.qunarzz.com/p/tts4/1812/37/b42284ce32079a02.jpg_228x168_edffd034.jpg',
+                        'http://img1.qunarzz.com/p/tts8/1812/d5/ebcac07ceecabb02.jpg_228x168_fe85b2e7.jpg',
+                        'http://img1.qunarzz.com/p/tts3/1812/6f/745f0c3828b7e202.jpg_228x168_4c190e42.jpg',
+                        'http://img1.qunarzz.com/p/tts5/1812/71/5f9518622490402.jpg_228x168_4d91d608.jpg',
+                        'https://imgs.qunarzz.com/p/tts2/1808/53/e011ea4669b07902.jpg_240x240_4a5bb18a.jpg',
+                        'https://imgs.qunarzz.com/piao/fusion/1908/5c/f64ed8b8c518d702.jpg_240x240_ce2fda7d.jpg',
+                        'https://imgs.qunarzz.com/piao/fusion/1812/65/a12a0e198c541102.jpg_240x240_b08bcaf1.jpg',
+                    ]
+                }
+            ]
+        }
+    }
 }
 </script>
 
@@ -138,6 +81,9 @@ export default {
             .Star
                 color #e0e0e0
                 font-size .22rem
+                margin-right .05rem
+            .starlevel-gain
+                color #ffb436
             .comment-item-title-right
                 float right 
                 font-size .24rem
