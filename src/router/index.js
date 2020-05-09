@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../pages/home/home'
-import Detail from '../pages/detail/Detail'
+import Home from '@/pages/home/home'
+import Detail from '@/pages/detail/Detail'
 
 Vue.use(VueRouter)
 
@@ -14,7 +14,7 @@ Vue.use(VueRouter)
   {
     path: '/city',
     name: 'City',
-    component: () => import(/* webpackChunkName: "about" */ '../pages/city/City')
+    component: () => import(/* webpackChunkName: "about" */ '@/pages/city/City')
   },
   {
     path : '/Detail/:id',
