@@ -1,5 +1,5 @@
 <template>
-    <div class="banner"> 
+    <div class="banner" @click='dlehanClick'> 
         <img class='banner-img' src="//img1.qunarzz.com/sight/p0/1508/2e/d9363ce50a88c8c5ff5a138c67687cd4.water.jpg_600x330_28bda6b0.jpg" alt="">
         <div class='banner-info'>
             <div class='banner-title'>深圳野生动物园(AAAA景区)</div>
@@ -9,8 +9,14 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
 export default{
-    name : 'DetailBanner'
+    name : 'DetailBanner',
+    mathods : {
+        dlehanClick (){
+
+        }
+    }
 }
 </script>
 

@@ -9,5 +9,8 @@ export default {
             console.log(e)
         }
         
+    },
+    setIsShowGallary(states, str){
+        states.isShowGallary = str;
     }
 }

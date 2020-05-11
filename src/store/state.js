@@ -10,5 +10,6 @@ try{//防止用户阻止本地存储或者无痕浏览导致错误
 }
 
 export default {
-	cities: defaultCities
+	cities: defaultCities,
+	isShowGallary : false
 }

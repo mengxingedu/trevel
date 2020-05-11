@@ -6,16 +6,20 @@
         <DetailTicketgroup />
         <DetailCommentList />
         <DetailRecommend />
+        <Gallary v-show="this.isShowGallary" />
     </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
+
 import DetailBanner from './components/banner'
 import DetailIntroduce from './components/introduce'
 import DetailAnnounce from './components/announce'
 import DetailTicketgroup from './components/ticketgroup'
 import DetailCommentList from './components/commentList'
 import DetailRecommend from './components/recommend'
+import Gallary from '@/common/gallary/gallary'
 
 export default {
     name : 'Detail',
@@ -25,7 +29,11 @@ export default {
         DetailAnnounce,
         DetailTicketgroup,
         DetailCommentList,
-        DetailRecommend
+        DetailRecommend,
+        Gallary
+    },
+    computed : {
+        ...mapState(['isShowGallary'])
     }
 }
 </script>
