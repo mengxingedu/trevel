@@ -10,7 +10,7 @@ export default {
         }
         
     },
-    setIsShowGallary(states, str){
-        states.isShowGallary = str;
+    setIsShowGallary(states){
+        states.isShowGallary = !states.isShowGallary;
     }
 }

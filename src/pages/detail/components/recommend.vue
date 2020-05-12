@@ -1,6 +1,6 @@
 <template>
     <div class="recommend-container">
-        <h3 class="recommend-title">用户评论</h3>
+        <h3 class="recommend-title">热门推荐</h3>
         <ul>
             <li class="recommend-item border-top clearfix" v-for='item of recommendDataList' :key='item.id'>
                 <img class='recommend-img' :src="item.imag" alt="">

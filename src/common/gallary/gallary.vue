@@ -1,13 +1,10 @@
 <template>
-    <div class="container" @click="handleGallaryClick">
+    <div class="container">
         <div class="wrapper">
             <swiper ref="mySwiper" :options="swiperOptions">
                 <!--第一种写法-->
-                <swiper-slide>
-                    <img class="swiper-img" src="https://img1.qunarzz.com/vs_ceph_vs_tts/acda5a9b-086c-4678-9447-f92eaf34ed15.jpg_r_1280x840x95_19003c13.jpg" />
-                </swiper-slide>
-                <swiper-slide>
-                    <img class="swiper-img" src="https://img1.qunarzz.com/p/tts7/1809/e2/149f578bbb9c7302.jpg_r_1280x840x95_fa2ccf25.jpg" />
+                <swiper-slide v-for="(item, index) of imagList" :key='index'>
+                    <img class="swiper-img" :src="item.image" />
                 </swiper-slide>
                  <div class="swiper-pagination" slot="pagination"></div>
             </swiper>
@@ -16,33 +13,25 @@
 </template>
 
 <script>
-import {mapState, mapMutations} from 'vuex';
 export default{
     name : 'gallary',
+    props : {
+        imagList : {
+            type : Array
+        }
+    },
     data (){
         return {
             swiperOptions : {
-                // pagination : '.swiper-pagination',
-                // paginationType : 'fraction',
-                // observeParents:true,
-                // observer:true,
                 pagination : {
                     el : '.swiper-pagination',
                     type: 'fraction',
-                    observer:true,
-                    observeSlideChildren:true,
-                }
+                },
+                observer:true,
+                observeParents:true,
+                observeSlideChildren:true,
             }
         }
-    },
-    methods : {
-        handleGallaryClick(){
-            this.setIsShowGallary(false)
-        },
-        ...mapMutations(['setIsShowGallary'])
-    },
-    computed : {
-        ...mapState(['isShowGallary'])
     }
 }
 </script>

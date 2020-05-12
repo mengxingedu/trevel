@@ -18,7 +18,10 @@
                     <p class="iconfont ticket-extend">&#xe62f;</p>
                 </div>
                 <div class="comment-imgs clearfix">
-                    <div class="comment-imgouter" v-for='(imgArr, index) of item.imgs' :key="'imgs' + index" v-show='index < 6'>
+                    <div class="comment-imgouter"
+                     v-for='(imgArr, index) of item.imgs' :key="'imgs' + index" 
+                     v-show='index < 6' @click="handleGallaryClick"
+                     >
                         <img class="comment-img" :src="imgArr" alt="">
                         <p class="comment-tagnum" v-if='index === 5'>共{{item.imgs.length}}张</p>
                     </div>
@@ -32,6 +35,7 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
 export default {
     name : 'DetailCommentList',
     data (){
@@ -58,6 +62,13 @@ export default {
                 }
             ]
         }
+    },
+    methods : {
+        handleGallaryClick (){
+            
+            this.setIsShowGallary()
+        },
+        ...mapMutations(['setIsShowGallary'])
     }
 }
 </script>
