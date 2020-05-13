@@ -35,8 +35,14 @@ export default{
         }
     },
     activated (){
+        console.log(123)
         window.addEventListener('scroll', this.handleScroll)
+    },
+    //页面即将被隐藏，或者页面被替换成新的页面的时候，这个生命周期钩子函数就被执行
+    deactivated(){
+        window.removeEventListener('scroll', this.handleScroll)
     }
+    
 }
 </script>
 
