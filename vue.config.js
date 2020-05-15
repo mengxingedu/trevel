@@ -10,7 +10,21 @@ module.exports = {
                     }
                 }
             }
-        }
+        },
     // }, 
-    
+    // configureWebpack: {
+    //     externals: {
+    //       BMap: 'BMap', // 百度地图配置
+    //     }
+    // },
+    // context: path.resolve(__dirname, '../'),
+    // entry: { app: './src/main.js' },
+    // //百度地图配置20180518
+    // externals: {
+    //     "BMap": "BMap"
+    // },
+
+    // globals: {
+    //     BMap: true
+    //   }
 }

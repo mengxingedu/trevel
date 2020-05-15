@@ -22,6 +22,7 @@ import DetailTicketgroup from './components/ticketgroup'
 import DetailCommentList from './components/commentList'
 import DetailRecommend from './components/recommend'
 import Gallary from '@/common/gallary/gallary'
+import axios from 'axios'
 
 export default {
     name : 'Detail',
@@ -55,7 +56,29 @@ export default {
             console.log(123)
             this.setIsShowGallary()
         },
-        ...mapMutations(['setIsShowGallary'])
+        ...mapMutations(['setIsShowGallary']),
+        getDatailInfo (){
+            // axios.get('/api/detail.json?id=' + this.$route.params.id)//第一种写法，但是太麻烦
+            axios.get('/api/detail.json', {
+                params : {
+                    id : this.$route.params.id
+                }
+            }).then(this.handleGetDataSucc);
+
+        },
+        handleGetDataSucc (res){
+            res = res.data;
+            if(res.ret && res.data){
+                const data = res.data;
+                console.log(data)
+            }
+        }   
+    },
+    mounted (){
+        this.getDatailInfo();
+    },
+    activated (){
+        this.getDatailInfo();
     }
 }
 </script>

@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@vue/cli-service": "^4.3.1",
     "axios": "^0.19.2",
     "better-scroll": "^1.15.2",
     "core-js": "^3.6.4",
@@ -17,9 +18,11 @@
     "swiper": "^5.3.7",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-baidu-map": "^0.21.22",
+    "vue-bmap": "^1.0.0",
     "vue-cli-configjs": "^2.0.0",
     "vue-router": "^3.1.6",
-    "vuex": "^3.3.0"
+    "vuex": "^3.4.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
@@ -28,7 +31,7 @@
     "@vue/cli-service": "~4.3.0",
     "babel-eslint": "^10.1.0",
     "compression-webpack-plugin": "^3.1.0",
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
     "image-webpack-loader": "^6.0.0",
     "vue-template-compiler": "^2.6.11"
@@ -44,12 +47,24 @@
     ],
     "parserOptions": {
       "parser": "babel-eslint"
-    },
-    "rules": {}
+    }
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "```\r npm install\r ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengxingedu/trevel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mengxingedu/trevel/issues"
+  },
+  "homepage": "https://github.com/mengxingedu/trevel#readme"
 }
