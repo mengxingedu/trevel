@@ -53,7 +53,6 @@ export default {
     },
     methods : {
         handleGallaryClick(){ //显示隐藏取反
-            console.log(123)
             this.setIsShowGallary()
         },
         ...mapMutations(['setIsShowGallary']),

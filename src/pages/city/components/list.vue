@@ -115,7 +115,6 @@ export default {
             if(_this.cities !== r.address.city){
               _this.isShowAddress = !_this.isShowAddress;
               _this.addressData = r.address.city;
-              // console.log( _this.addressData)
               // _this.add(r.address.city);
             }
           } else {
